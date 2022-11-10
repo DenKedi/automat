@@ -10,8 +10,9 @@ public class GamePanel extends JPanel implements Runnable{
 
     public JFrame parent;
     public final int FPS = 60;
-    public final int screenWidth = 1920/2;
-    public final int screenHeight = 1080/2;
+    public final int screenWidth = 1920;
+    public final int screenHeight = 1080;
+    public Color bgColor = new Color(220, 220, 220);
     UIHandler uihandler = new UIHandler(this);
     Thread gameThread;
 
@@ -20,7 +21,7 @@ public class GamePanel extends JPanel implements Runnable{
     public GamePanel(JFrame window){
         this.parent = window;
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
-        this.setBackground(Color.darkGray);
+        this.setBackground(bgColor);
         this.setDoubleBuffered(true);
         KeyListener keyHandler;
         //this.addKeyListener();

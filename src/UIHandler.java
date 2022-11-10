@@ -12,6 +12,7 @@ public class UIHandler {
     GamePanel gp;
     BufferedImage bgImage;
     Color rectOutl = new Color(0x2E323232, true);
+    Color slotBarrier = new Color(0x2E323232, true);
     public UIHandler(GamePanel gp){
         this.gp = gp;
         try {
@@ -22,10 +23,17 @@ public class UIHandler {
     }
 
     public void drawBg(Graphics2D g2){
-        g2.drawImage(bgImage, 0, 0, null);
-        g2.drawRect(0, 0, gp.screenWidth, 40);
+
+        g2.drawRect(0, gp.screenHeight-420, gp.screenWidth, 420);
         g2.setColor(rectOutl);
-        g2.fillRect(0, 0, gp.screenWidth, 40);
+        g2.fillRect(0, gp.screenHeight-420, gp.screenWidth, 420);
+
+        g2.fillRect(500, 120, 2, 450);
+        g2.fillRect(gp.screenWidth-1000, 120, 1, 450);
+
+
+    }
+    public void drawSymbols(Graphics2D g2){
 
     }
 }
